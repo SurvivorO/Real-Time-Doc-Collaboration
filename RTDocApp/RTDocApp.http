@@ -1,0 +1,6 @@
+@RTDocApp_HostAddress = http://localhost:5022
+
+GET {{RTDocApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
