@@ -7,9 +7,11 @@ namespace RTDocApp
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
 
-            builder.Services.AddControllers();
+            // Add services to the container.
+            builder.Services.AddControllers();           
+            builder.Services.AddAuthentication().AddJwtBearer();
+
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
@@ -26,7 +28,7 @@ namespace RTDocApp
             }
 
             app.UseHttpsRedirection();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
