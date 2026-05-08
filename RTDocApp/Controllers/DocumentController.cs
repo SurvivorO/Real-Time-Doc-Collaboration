@@ -62,6 +62,21 @@ namespace RTDocApp.Controllers
             }
             return -1;
         }
+
+        [HttpDelete]
+        public int DeleteDocument(int id) 
+        { 
+            DirectoryInfo di = new DirectoryInfo(dir);
+            foreach (FileInfo files in di.GetFiles())
+            {
+                if (files.Name == $"Document{id}.txt")
+                {
+                    files.Delete(); 
+                    return 1;
+                }
+            }
+            return -1;
+        }
     }
   
 
